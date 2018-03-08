@@ -12,7 +12,6 @@ namespace Scavenger.Service
         {
             Paths = new ObservableCollection<string>();
         }
-
         public ObservableCollection<string> Paths { get; }
 
         public static PathConfig GetPathsConfigModel()
@@ -29,16 +28,15 @@ namespace Scavenger.Service
 
             return ReadPathConfig();
         }
-
         public static void SavePathConfigModel(PathConfig pathConfig)
         {
             string json = JsonConvert.SerializeObject(pathConfig);
             using (FileStream fileStream = File.Open("ConfigPath", FileMode.OpenOrCreate))
             {
                 fileStream.Write(json);
+                fileStream.Flush();
             }
         }
-
         private static PathConfig ReadPathConfig()
         {
             using (var fileStream = File.Open(ConfigPath, FileMode.Open))
@@ -47,7 +45,6 @@ namespace Scavenger.Service
                 return JsonConvert.DeserializeObject<PathConfig>(json);
             }
         }
-
         private static void RecreateConfigFile()
         {
             using (var fileStream = File.Create(ConfigPath))
