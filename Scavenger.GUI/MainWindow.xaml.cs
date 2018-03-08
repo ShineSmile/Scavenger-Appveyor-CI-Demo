@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Scavenger
+namespace Scavenger.GUI
 {
     public partial class MainWindow : Window
     {

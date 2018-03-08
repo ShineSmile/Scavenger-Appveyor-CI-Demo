@@ -1,13 +1,15 @@
-﻿<Window x:Class="Scavenger.MainWindow"
+﻿<Window x:Class="Scavenger.GUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scavenger"
+        xmlns:gui="clr-namespace:Scavenger.GUI"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="300"
-        Width="400">
+        Width="400"
+        d:DataContext="{d:DesignInstance gui:ScavengerViewModel }">
     <StackPanel Orientation="Vertical">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -23,13 +25,15 @@
                        Grid.Column="1"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       Text="OFF" />
+                       Text="{Binding ServiceStatus}" />
             <Button Margin="10"
                     Grid.Column="2"
-                    Content="启用" />
+                    Content="启用"
+                    Command="{Binding RegistServiceCommand}" />
             <Button Margin="10"
                     Grid.Column="3"
-                    Content="禁用" />
+                    Content="禁用"
+                    Command="{Binding UnregistServiceCommand}" />
         </Grid>
     </StackPanel>
 </Window>

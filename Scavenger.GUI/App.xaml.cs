@@ -1,6 +1,4 @@
-﻿using Scavenger.Service;
-
-namespace Scavenger
+﻿namespace Scavenger.GUI
 {
     public partial class App
     {

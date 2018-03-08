@@ -1,4 +1,4 @@
-﻿namespace Scavenger.Service
+﻿namespace Scavenger
 {
     public static class ServiceUtility
     {

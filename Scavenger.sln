@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scavenger", "Scavenger\Scavenger.csproj", "{D336CC74-211F-4CD5-AB0A-F685E71C4D4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scavenger.GUI", "Scavenger.GUI\Scavenger.GUI.csproj", "{D336CC74-211F-4CD5-AB0A-F685E71C4D4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scavenger.Service", "Scavenger.Service\Scavenger.Service.csproj", "{8F37F684-714F-4F94-8D6C-F1EF350A8906}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scavenger", "Scavenger\Scavenger.csproj", "{8F37F684-714F-4F94-8D6C-F1EF350A8906}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
