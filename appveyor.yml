@@ -12,7 +12,7 @@ build:
   parallel: true
   verbosity: minimal
 artifacts:
-- path: Scavenger.GUI\bin\Release\
+- path: Scavenger.GUI\bin\Release\*
   name: Scavenger.GUI
 deploy:
 - provider: NuGet
