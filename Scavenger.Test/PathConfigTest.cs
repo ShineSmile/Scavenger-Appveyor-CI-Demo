@@ -10,10 +10,7 @@ namespace Scavenger.Test
         [TestInitialize]
         public void DeleteJsonConfigFile()
         {
-            if (File.Exists(PathConfig.ConfigPath))
-            {
-                File.Delete(PathConfig.ConfigPath);
-            }
+            if (File.Exists(PathConfig.ConfigPath)) File.Delete(PathConfig.ConfigPath);
         }
 
         [TestMethod]
