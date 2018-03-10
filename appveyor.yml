@@ -1,21 +1,15 @@
 version: 1.0.0.{build}
-image: Previous Visual Studio 2017
+skip_tags: true
+max_jobs: 1
+image: Visual Studio 2017
 configuration: Release
 platform: Any CPU
+nuget:
+  project_feed: true
 before_build:
 - ps: nuget restore Scavenger.sln
 build:
   project: Scavenger.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
-  include_nuget_references: true
   parallel: true
   verbosity: minimal
-artifacts:
-- path: Scavenger.GUI\bin\Release\*
-  name: Scavenger.GUI
-deploy:
-- provider: NuGet
-  server: https://ci.appveyor.com/nuget/scavenger-pfqltp7yaqom
-  api_key:
-    secure: EYt7o9zYZg35PV/Hfu2KhZv+HLDDKuyEOKXhLThoK8c=
+deploy: off
