@@ -6,7 +6,7 @@ namespace Scavenger
 {
     public class PathConfig
     {
-        private const string ConfigPath = "PathConfig.json";
+        public const string ConfigPath = "PathConfig.json";
 
         internal PathConfig()
         {
@@ -33,10 +33,9 @@ namespace Scavenger
         public static void SavePathConfigModel(PathConfig pathConfig)
         {
             string json = JsonConvert.SerializeObject(pathConfig);
-            using (var fileStream = File.Open("ConfigPath", FileMode.OpenOrCreate))
+            using (var fileStream = File.Open(ConfigPath, FileMode.OpenOrCreate))
             {
                 fileStream.Write(json);
-                fileStream.Flush();
             }
         }
 
@@ -51,14 +50,9 @@ namespace Scavenger
 
         private static void RecreateConfigFile()
         {
-            using (var fileStream = File.Create(ConfigPath))
-            {
-                var model = new PathConfig();
-                model.Paths.Add("%TMP%");
-                string json = JsonConvert.SerializeObject(model);
-                fileStream.Write(json);
-                fileStream.Flush();
-            }
+            var config = new PathConfig();
+            config.Paths.Add("%TMP%");
+            SavePathConfigModel(config);
         }
     }
 }

@@ -1,0 +1,15 @@
+version: 1.0.0.{build}
+skip_tags: true
+max_jobs: 1
+image: Visual Studio 2017
+configuration: Release
+platform: Any CPU
+nuget:
+  project_feed: true
+before_build:
+- ps: nuget restore Scavenger.sln
+build:
+  project: Scavenger.sln
+  parallel: true
+  verbosity: minimal
+deploy: off

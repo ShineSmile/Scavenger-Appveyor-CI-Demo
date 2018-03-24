@@ -1,17 +1,27 @@
-﻿namespace Scavenger
+﻿using System;
+
+namespace Scavenger
 {
-    public static class ServiceUtility
+    internal static class ServiceUtility
     {
-        public static void RegistService()
+        internal static int StartServiceDirectly(StartOptions opts)
         {
+            throw new NotImplementedException();
         }
 
-        public static void UnRegistService()
+        internal static int RunUnregistAndeReturnExitCode(UninstallOptions opts)
         {
+            throw new NotImplementedException();
         }
 
-        public static void QueryServiceStatus()
+        internal static int RunRegistAndReturnExitCode(InstallOptions opts)
         {
+            throw new NotImplementedException();
+        }
+
+        internal static int RunStatusAndReturnExitCode(StatusOptions opts)
+        {
+            throw new NotImplementedException();
         }
     }
 }
